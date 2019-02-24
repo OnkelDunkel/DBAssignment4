@@ -58,7 +58,7 @@
 	| 17:02:23 | root[root] @ localhost []             | Query        | FLUSH PRIVILEGES  
 
 
-## three queries
+## 3 queries
 
 	| 17:05:24 | root[root] @ localhost [] | Query        | INSERT INTO `employees` (`employeeNumber`, `lastName`, `firstName`, `extension`, `email`, `officeCode`, `reportsTo`, `jobTitle`) VALUES ('2234324', 'dmd', 'eef', 'sef', 'fdf@ßdf', '4', '1286', 'sdffe')  |
 	| 17:05:16 | root[root] @ localhost [] | Query        | INSERT INTO `employees` (`employeeNumber`, `lastName`, `firstName`, `extension`, `email`, `officeCode`, `reportsTo`, `jobTitle`) VALUES ('2324', 'dmd', 'eef', 'sef', 'fdf@ßdf', '4', '1286', 'sdffe')     |
@@ -73,5 +73,6 @@
 
 
 
-
+# Exercise 3 - backup and recovery
+I did a logical dump using mysqldump.
 
