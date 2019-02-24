@@ -1,4 +1,4 @@
-# Exercise 1
+# Excercise 1 - user privileges
 
 ## Inserting users
 
@@ -25,5 +25,18 @@
 	GRANT ALL ON classicmodels.* TO 'IT'@'localhost';
 	
 	FLUSH PRIVILEGES;
+
+
+### Why theses privileges?
+* Inventory - needs to manage products and product lines
+* Bookkeeping - just needs to be able to view oders & details
+* HR - they are managing employees and offices
+* Sales - in theory only needs to create orders but they should also be able to correct their mistakes in orders wihtout having to contact IT
+* IT - needs all access because they are IT
+
+# Exercise 2 - logging
+
+
+
 
 
