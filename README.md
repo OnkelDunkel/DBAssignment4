@@ -35,6 +35,41 @@
 * IT - needs all access because they are IT
 
 # Exercise 2 - logging
+## Creating users:
+
+	| 17:00:47 | root[root] @ localhost []   | Query        | CREATE USER 'Inventory'@'localhost' IDENTIFIED WITH 'mysql_native_password' AS '<secret>'                                              |
+	| 17:00:47 | root[root] @ localhost []   | Query        | CREATE USER 'Bookkeeping'@'localhost' IDENTIFIED WITH 'mysql_native_password' AS '<secret>'                                            |
+	| 17:00:47 | root[root] @ localhost []   | Query        | CREATE USER 'hr'@'localhost' IDENTIFIED WITH 'mysql_native_password' AS '<secret>'                                                     |
+	| 17:00:47 | root[root] @ localhost []   | Query        | CREATE USER 'Sales'@'localhost' IDENTIFIED WITH 'mysql_native_password' AS '<secret>'                                                  |
+	| 17:00:47 | root[root] @ localhost []   | Query        | CREATE USER 'IT'@'localhost' IDENTIFIED WITH 'mysql_native_password' AS '<secret>'  
+
+
+## Granting privileges
+
+	| 17:02:23 | root[root] @ localhost []             | Query        | GRANT SELECT, UPDATE, INSERT  ON classicmodels.products TO 'Inventory'@'localhost'                                                     |
+	| 17:02:23 | root[root] @ localhost []             | Query        | GRANT SELECT, UPDATE, INSERT  ON classicmodels.productlines TO 'Inventory'@'localhost'                                                 |
+	| 17:02:23 | root[root] @ localhost []             | Query        | GRANT SELECT ON classicmodels.orders TO 'Bookkeeping'@'localhost'                                                                      |
+	| 17:02:23 | root[root] @ localhost []             | Query        | GRANT SELECT ON classicmodels.orderdetails TO 'Bookkeeping'@'localhost'                                                                |
+	| 17:02:23 | root[root] @ localhost []             | Query        | GRANT SELECT, UPDATE, INSERT ON classicmodels.employees TO 'hr'@'localhost'                                                            |
+	| 17:02:23 | root[root] @ localhost []             | Query        | GRANT SELECT, UPDATE, INSERT ON classicmodels.employees TO 'hr'@'localhost'                                                            |
+	| 17:02:23 | root[root] @ localhost []             | Query        | GRANT SELECT, UPDATE, INSERT ON classicmodels.orders TO 'Sales'@'localhost'                                                            |
+	| 17:02:23 | root[root] @ localhost []             | Query        | GRANT SELECT, UPDATE, INSERT ON classicmodels.orderdetails TO 'Sales'@'localhost'                                                      |
+	| 17:02:23 | root[root] @ localhost []             | Query        | GRANT ALL ON classicmodels.* TO 'IT'@'localhost'                                                                                       |
+	| 17:02:23 | root[root] @ localhost []             | Query        | FLUSH PRIVILEGES  
+
+
+## three queries
+
+	| 17:05:24 | root[root] @ localhost [] | Query        | INSERT INTO `employees` (`employeeNumber`, `lastName`, `firstName`, `extension`, `email`, `officeCode`, `reportsTo`, `jobTitle`) VALUES ('2234324', 'dmd', 'eef', 'sef', 'fdf@ßdf', '4', '1286', 'sdffe')  |
+	| 17:05:16 | root[root] @ localhost [] | Query        | INSERT INTO `employees` (`employeeNumber`, `lastName`, `firstName`, `extension`, `email`, `officeCode`, `reportsTo`, `jobTitle`) VALUES ('2324', 'dmd', 'eef', 'sef', 'fdf@ßdf', '4', '1286', 'sdffe')     |
+	| 17:05:04 | root[root] @ localhost [] | Query        | INSERT INTO `employees` (`employeeNumber`, `lastName`, `firstName`, `extension`, `email`, `officeCode`, `reportsTo`, `jobTitle`) VALUES ('234324', 'dmd', 'eef', 'sef', 'fdf@ßdf', '4', '1286', 'sdffe')  |
+
+	| 17:07:21 | root[root] @ localhost []             | Query        | INSERT INTO `products` (`productCode`, `productName`, `productLine`, `productScale`, `productVendor`, `productDescription`, `quantityInStock`, `buyPrice`, `MSRP`) VALUES ('23433', 'sdsddf', 'Motorcycles', 'sdcse', 'esf', 'sed', '2323', '233', '34') |
+
+	| 17:09:09 | root[root] @ localhost []             | Query        | INSERT INTO `products` (`productCode`, `productName`, `productLine`, `productScale`, `productVendor`, `productDescription`, `quantityInStock`, `buyPrice`, `MSRP`) VALUES ('23sd3', 'sdsddf', 'Motorcycles', 'sdcse', 'esf', 'sed', '2323', '233', '34')                                                                                                                                                                                                                                                                                                               |
+
+
+	| 17:11:14 | Sales[Sales] @ localhost [] | Query        | drop database customers                                                                                                                |
 
 
 
